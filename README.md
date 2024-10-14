@@ -6,7 +6,7 @@ mvn -version
 ```
 Clone o Repositório
 ```
-- git clone https://github.com/Pedrolucasrd/TRABALHO_LP2_2023.git
+- git clone https://github.com/LucasMonteiiroo/Trabalho_LP2_2024
 - cd seu-projeto
 ```
 ## Compilação e Execução do Projeto
