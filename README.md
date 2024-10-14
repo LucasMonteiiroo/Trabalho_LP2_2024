@@ -22,7 +22,7 @@ Compile o projeto usando o Maven:
 ```
 Execute o aplicativo Spring Boot:
 ```
-java -jar target/TRABALHO_LP2_2024-1.0.0.jar
+java -jar target/Leilao-0.0.1-SNAPSHOT.jar
 ```
 Estará disponível.
 
