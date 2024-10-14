@@ -7,7 +7,7 @@ mvn -version
 Clone o Repositório
 ```
 - git clone https://github.com/LucasMonteiiroo/Trabalho_LP2_2024
-- cd seu-projeto
+- cd projeto
 ```
 ## Compilação e Execução do Projeto
 Para compilar e executar o projeto, siga os passos abaixo:
