@@ -1,5 +1,6 @@
-package com.fatec.Leilao.model.instituicaoFinanceira;
+package com.fatec.Leilao.model.instituicaoFinanceira.dto;
 
+import com.fatec.Leilao.model.instituicaoFinanceira.InstituicaoFinanceira;
 import com.fatec.Leilao.model.instituicaoFinanceira.enums.TipoInstituicao;
 
 public record ExibicaoInstituicaoFinanceiraDTO(

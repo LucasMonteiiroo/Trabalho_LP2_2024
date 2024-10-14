@@ -1,10 +1,11 @@
 package com.fatec.Leilao.controller;
 
-import com.fatec.Leilao.model.instituicaoFinanceira.CriacaoInstituicaoDTO;
-import com.fatec.Leilao.model.instituicaoFinanceira.ExibicaoInstituicaoFinanceiraDTO;
+import com.fatec.Leilao.model.instituicaoFinanceira.dto.CriacaoInstituicaoDTO;
+import com.fatec.Leilao.model.instituicaoFinanceira.dto.ExibicaoInstituicaoFinanceiraDTO;
 import com.fatec.Leilao.service.InstituicaoFinanceiraService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,5 +27,10 @@ public class InstituicaoFinanceiraController {
     @GetMapping("listar")
     public List<ExibicaoInstituicaoFinanceiraDTO> listarInstituicoesFinanceiras(){
         return instituicaoFinanceiraService.listarInstituicoesFinanceiras();
+    }
+
+    @DeleteMapping("/deletar/{id}")
+    public ResponseEntity<String> deletarinstituicaoPorId(@PathVariable Long id){
+        return instituicaoFinanceiraService.deletarinstituicaoPorId(id);
     }
 }

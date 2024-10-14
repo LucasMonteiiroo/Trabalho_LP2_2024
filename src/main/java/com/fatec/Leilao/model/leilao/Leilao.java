@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.Collections;
 import java.util.List;
 
 @Entity
@@ -46,6 +47,7 @@ public class Leilao {
         this.descricao = criacaoLeilaoDTO.descricao();
         this.dataInicio = criacaoLeilaoDTO.dataInicio();
         this.dataFechamento = criacaoLeilaoDTO.dataFechamento();
-        this.localizacao = new Localizacao(criacaoLeilaoDTO.localizacao());
+        this.instituicaoFinanceira = Collections.singletonList(instituicaoFinanceira);
+        this.status = StatusLeilao.EM_ABERTO;
     }
 }

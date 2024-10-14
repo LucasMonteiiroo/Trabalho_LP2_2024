@@ -1,12 +1,10 @@
 package com.fatec.Leilao.model.leilao.endereco;
 
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fatec.Leilao.model.leilao.endereco.dto.LocalizacaoDTO;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.IdClass;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,23 +15,27 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
+@IdClass(PkLocalizacao.class)
 public class Localizacao {
+    @Id
+    private Long numero;
     @Id
     private String cep;
 
-    private Integer numero;
 
-    private String nomeRua;
+    private String cidade;
 
-    @ManyToOne
-    @JoinColumn(name = "id_bairro")
-    @JsonBackReference
-    private Bairro bairro;
+    private String estado;
+
+    private String rua;
+
+    private String bairro;
 
     public Localizacao(LocalizacaoDTO localizacao) {
-        this.cep = localizacao.cep();
         this.numero = localizacao.numero();
-        this.nomeRua = localizacao.rua();
-        this.bairro = new Bairro(localizacao);
+        this.cep = localizacao.cep();
+        this.cidade = localizacao.cidade();
+        this.estado = localizacao.siglaEstado();
+        this.bairro = localizacao.bairro();
     }
 }
