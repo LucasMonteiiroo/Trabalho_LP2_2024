@@ -6,7 +6,7 @@ public record LocalizacaoDTO(
         @Schema(defaultValue = "49092618")
         String cep,
         @Schema(defaultValue = "80")
-        Integer numero,
+        Long numero,
         @Schema(defaultValue = "Rua Oito")
         String rua,
 
@@ -17,9 +17,6 @@ public record LocalizacaoDTO(
         String cidade,
 
         @Schema(defaultValue = "SE")
-        String siglaEstado,
-
-        @Schema(defaultValue = "Sergipe")
-        String estado
+        String siglaEstado
 ) {
 }

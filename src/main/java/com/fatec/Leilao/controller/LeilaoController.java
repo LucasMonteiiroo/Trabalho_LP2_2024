@@ -4,10 +4,10 @@ import com.fatec.Leilao.model.leilao.dto.ExibicaoLeilaoDTO;
 import com.fatec.Leilao.service.LeilaoService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("leilao")
@@ -21,4 +21,15 @@ public class LeilaoController {
     public ExibicaoLeilaoDTO criarLeilao(@RequestBody CriacaoLeilaoDTO criacaoLeilaoDTO){
         return leilaoService.criarLeilao(criacaoLeilaoDTO);
     }
+
+    @GetMapping("listar")
+    public List<ExibicaoLeilaoDTO> listarLeiloes (){
+        return leilaoService.listarLeiloes();
+    }
+
+    @DeleteMapping("/deletar/{id}")
+    public ResponseEntity<String> deletarLeilaoPorId (@PathVariable Long id){
+        return leilaoService.deletarLeilaoPorId(id);
+    }
+
 }

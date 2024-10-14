@@ -1,6 +1,9 @@
 package com.fatec.Leilao.model.informatica;
 
+import com.fatec.Leilao.model.informatica.dto.CadastroDispositivoDTO;
+import com.fatec.Leilao.model.informatica.dto.CadastroDispositivoInformaticaSwitchDTO;
 import com.fatec.Leilao.model.informatica.enums.TipoDispositivoInformatica;
+import com.fatec.Leilao.model.leilao.Leilao;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,5 +32,18 @@ public class DispositivoInformatica {
     private String anoFabricacao;
 
     private Double precoInicial;
+
+    @ManyToOne
+    @JoinColumn(name = "leilao_id")
+    private Leilao leilao;
+
+    public DispositivoInformatica(CadastroDispositivoDTO cadastroDispositivoDTO, Leilao leilao) {
+        this.tipoDispositivo = cadastroDispositivoDTO.tipoDispositivo();
+        this.marca = cadastroDispositivoDTO.marca();
+        this.descricao = cadastroDispositivoDTO.descricao();
+        this.anoFabricacao = cadastroDispositivoDTO.anoFabricacao();
+        this.precoInicial = cadastroDispositivoDTO.precoInicial();
+        this.leilao = leilao;
+    }
 
 }
