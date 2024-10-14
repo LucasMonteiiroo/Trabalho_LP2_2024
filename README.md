@@ -14,7 +14,7 @@ Para compilar e executar o projeto, siga os passos abaixo:
 
 Acesse o diretório raiz do projeto:
 ```
-- cd seu-projeto
+- cd projeto
 ```
 Compile o projeto usando o Maven:
 ```
