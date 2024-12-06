@@ -28,7 +28,7 @@ Estará disponível.
 
 
 # Acesso ao Swagger
-* http://localhost:5050/swagger-ui.html
+* http://localhost:8080/swagger-ui/index.html
 
 ## Endpoints 
 
